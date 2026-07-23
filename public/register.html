@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TechNest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><a href="/" style="text-decoration:none;color:inherit"><h1>TechNest</h1></a></div>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-box register-box">
+            <h2>Create Account</h2>
+            <p class="auth-subtitle">Join TechNest today</p>
+            <div id="alertContainer"></div>
+
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Choose a username" minlength="3" required>
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" placeholder="Min 8 chars" required>
+                        <button type="button" class="toggle-btn" onclick="togglePassword('password')">👁️</button>
+                    </div>
+                    <div class="password-requirements">
+                        <p>Password must contain:</p>
+                        <ul>
+                            <li id="req-length">✗ At least 8 characters</li>
+                            <li id="req-upper">✗ Uppercase (A-Z)</li>
+                            <li id="req-lower">✗ Lowercase (a-z)</li>
+                            <li id="req-number">✗ Number (0-9)</li>
+                            <li id="req-special">✗ Special char (@$!%*?&)</li>
+                        </ul>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input">
+                        <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                        <button type="button" class="toggle-btn" onclick="togglePassword('confirmPassword')">👁️</button>
+                    </div>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to Terms and Privacy Policy</label>
+                    <span class="error-message" id="termsError"></span>
+                </div>
+
+                <button type="submit" class="auth-button">
+                    <span id="buttonText">Create Account</span>
+                    <span id="loadingSpinner" style="display:none;"><i class="spinner"></i></span>
+                </button>
+            </form>
+
+            <div class="divider"><span>Already have an account?</span></div>
+            <a href="/login" class="register-link">Sign In</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2024 TechNest. All rights reserved.</p></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

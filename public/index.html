@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNest - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><h1>TechNest</h1></div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li id="navAuthButtons">
+                    <a href="/login" class="nav-link btn-login">Login</a>
+                    <a href="/register" class="nav-link btn-register">Register</a>
+                </li>
+                <li id="navUserMenu" style="display:none;">
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                    <a href="#" onclick="logout(); return false;" class="nav-link btn-login">Logout</a>
+                </li>
+            </ul>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to TechNest</h2>
+            <p>Full Stack Web Application with Secure Authentication</p>
+            <a href="/register" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Secure Auth</h3>
+                    <p>Enterprise-grade security with bcrypt hashing and JWT tokens</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Performance</h3>
+                    <p>Optimized backend with Node.js and Express</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first design for all devices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗄️</div>
+                    <h3>Oracle Database</h3>
+                    <p>Professional PL/SQL database with full integration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-item"><h3>User Registration</h3><p>Secure account creation with validation</p></div>
+                <div class="service-item"><h3>Profile Management</h3><p>Manage your personal information</p></div>
+                <div class="service-item"><h3>Session Management</h3><p>Secure session handling and tracking</p></div>
+                <div class="service-item"><h3>Activity Logging</h3><p>Complete audit trail of your actions</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TechNest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
