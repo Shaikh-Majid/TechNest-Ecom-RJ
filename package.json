@@ -8,22 +8,28 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["authentication", "nodejs", "express", "oracle", "security"],
+  "keywords": [
+    "authentication",
+    "nodejs",
+    "express",
+    "oracle",
+    "security"
+  ],
   "author": "TechNest",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.0.3",
-    "oracledb": "^5.5.0",
-    "cors": "^2.8.5",
-    "helmet": "^7.0.0",
     "express-validator": "^7.0.0",
+    "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
-    "cookie-parser": "^1.4.6"
+    "oracledb": "^5.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^3.1.14"
   }
 }
