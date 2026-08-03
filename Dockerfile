@@ -38,10 +38,6 @@ FROM node:${NODE_VERSION} AS runtime
 # For air-gapped/reproducible builds, mirror this zip into an internal
 # artifact store and point OIC_BASE_URL at it via --build-arg instead of
 # pulling from download.oracle.com at build time.
-ARG OIC_VERSION=21.13.0.0.0
-ARG OIC_VERSION_PATH=213000
-ARG OIC_BASE_URL=https://download.oracle.com/otn_software/linux/instantclient/${OIC_VERSION_PATH}
-ARG OIC_DIR=instantclient_21_13
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libaio1 \
@@ -49,20 +45,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         unzip \
         ca-certificates \
         tini \
-    && wget -q "${OIC_BASE_URL}/instantclient-basiclite-linux.x64-${OIC_VERSION}dbru.zip" -O /tmp/instantclient.zip \
-    && unzip -q /tmp/instantclient.zip -d /opt/oracle \
-    && rm -f /tmp/instantclient.zip \
-    && rm -f /opt/oracle/${OIC_DIR}/*jdbc* /opt/oracle/${OIC_DIR}/*occi* \
-             /opt/oracle/${OIC_DIR}/*mysql* /opt/oracle/${OIC_DIR}/*README \
-             /opt/oracle/${OIC_DIR}/*.jar \
-    && echo "/opt/oracle/${OIC_DIR}" > /etc/ld.so.conf.d/oracle-instantclient.conf \
-    && ldconfig \
     && apt-get purge -y --auto-remove wget unzip \
     && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production \
     PORT=3000 \
-    LD_LIBRARY_PATH=/opt/oracle/${OIC_DIR} \
     NPM_CONFIG_UPDATE_NOTIFIER=false
 
 WORKDIR /app
